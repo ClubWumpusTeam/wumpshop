@@ -1,0 +1,49 @@
+@font-face {
+	font-family: 'Uni Sans';
+	src: url(fnt/unisans-heavy.otf);
+	font-weight: bold;
+	font-weight: 600;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+    background-image:    url(img/vigenette.png);
+    background-size:     cover;
+    background-repeat:   no-repeat;
+    background-position: center center;  
+	color: #FFF;
+	text-decoration: none;
+	font-family: 'Uni Sans';
+	font-weight: 300;
+	font-size: 25pt;
+}
+a {
+	color: #FFF;
+	text-decoration: none;
+}
+.menu {
+	width: 1140px;
+	overflow: hidden;
+	margin: 10px auto;
+	    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.menu a {
+	border-radius: 25px;
+	width: 360px;
+	line-height: 360px;
+	display: block;
+	margin: 4px;
+	text-align: center;
+	float:left;
+	opacity: 0.3;
+}
+.yellow { background-image: url("img/test.png") }
+.blue { background-image: url("img/coin.png") }
+.purple { background: #574696; }
+.orange { background: #ee7202; }
+.pink { background: #e61c67; }
+.green { background: #96c11f; }
