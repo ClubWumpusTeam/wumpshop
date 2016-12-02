@@ -9,10 +9,10 @@
 	padding: 0;
 }
 body {
-    background-image:    url(img/vigenette.png);
+	    background-image:    url(img/vigenette.png);
     background-size:     cover;
     background-repeat:   no-repeat;
-    background-position: center center;  
+    background-position: center 0%;  
 	color: #FFF;
 	text-decoration: none;
 	font-family: 'Uni Sans';
