@@ -1,0 +1,64 @@
+@font-face {
+	font-family: 'Uni Sans';
+	src: url(fnt/unisans-heavy.otf);
+	font-weight: bold;
+	font-weight: 600;
+}
+@font-face {
+	font-family: 'Wii';
+	src: url(fnt/wiifont.ttf);
+	font-weight: 600;
+}
+* {
+	margin: 0;
+	padding: 0;
+			cursor: url('img/wii-cursor.png'), default;
+}
+body {
+	    background-image:    url(img/vigenette-dark.png);
+    background-size:     cover;
+    background-repeat:   no-repeat;
+    background-position: center 0%;  
+	color: #000;
+	text-decoration: none;
+	font-family: 'Uni Sans';
+	font-weight: 300;
+	font-size: 30pt;
+	cursor: url('img/wii-cursor.png'), default;
+}
+a {
+	color: #FFF;
+	text-decoration: none;
+		cursor: url('img/wii-cursor.png'), default;
+}
+.menu {
+	width: 80%;
+	overflow: hidden;
+	margin: auto;
+	cursor: url('img/wii-cursor.png'), default;
+}
+.menu a {
+	border-radius: 5px;
+	width: 75%;
+	line-height: 80px;
+	display: block;
+	margin: auto;
+	text-align: center;
+	cursor: url('img/wii-cursor.png'), default;
+	float:center;
+	opacity: 0.3;
+}
+.yellow { background: #DDDD00 }
+.blue { background: #AAAADD }
+.purple { background: #DD00DD }
+.orange { background: #DD7700 }
+.pink { background: #FF6666 }
+.green { background: #AADDAA }
+.black { background: #000000; }
+.infotext {
+	font-family: 'Wii';
+	color: white;
+	font-size: 10px;
+}
+
+.

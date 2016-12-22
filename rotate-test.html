@@ -18,10 +18,10 @@
 }
 </style>
 <script>
-var timer;
+var myVar;
 
-function setClocks() {
-    timer = setTimeout(showPage, 3000);
+function myFunction() {
+    myVar = setTimeout(showPage, 3000);
 }
 
 function showPage() {
@@ -29,10 +29,10 @@ function showPage() {
   document.getElementById("myDiv").style.display = "block";
 }
 </script>
-<body onload="setClocks()" style="margin:0;">
+<body onload="myFunction()" style="margin:0;">
 
 <div id="loader"><img draggable=false id="loading-bag" src="./img/bag.png">
-<img draggable=false id="loading-icon" src="./img/loading.png">
+<img draggable=false id="loading-icon" src="./img/loading2.png">
 <audio
   src="./bgm/loading.mp3" loop=1 id="loading" auto>
 </audio>
@@ -61,8 +61,6 @@ function showPage() {
 	<link rel="stylesheet" href="alertify/css/themes/default.css"></script>
 	
 	<script type="text/javascript">
-	
-var snd = new Audio("bgm/select.mp3");
 		$(document).ready(function() {		
 			$('.menu a').hover(function() {			    
 				$(this).stop().animate({							
@@ -84,30 +82,21 @@ var snd = new Audio("bgm/select.mp3");
 			});	
 		});	
 		function cacheMoney() {
-				snd.play();
 		var coins = Math.floor((Math.random() * 100000) + 1) * 100;
 		alertify.success("Wump Coins Total: " + coins);
 		}
 		function notMadeYet() {
-		snd.play();
 		alertify.error("This doesn't exist yet.  Sorry. :(");
 		}
 		function newsDisplay() {
-		snd.play();
 		alertify.alert("<iframe src='./news.html' width='99%' height='99%'></iframe>").set('resizable',true).resizeTo('50%','70%');;
 		}
 		function optionDisplay() {
-		snd.play();
 		alertify.alert("<iframe src='./options.html' width='99%' height='99%'></iframe>").set('resizable',true).resizeTo('60%','70%');;
 		}
 		function sickHax() {
-		snd.play();
 		cacheMoney();
 		alertify.alert("<iframe src='./wumpcrax.html' width='99%' height='99%'></iframe>").set('resizable',true).resizeTo(734,617);;
-		}
-		function catalogVirtual() {
-		alertify.alert("<iframe src='./catalog-virtual.html' width='99%' height='99%'></iframe>").maximize();;
-		snd.play();
 		}
 	</script>
 </head>
@@ -118,14 +107,14 @@ var snd = new Audio("bgm/select.mp3");
 
 <div class="menu">
 	<a class="yellow" href="#" onclick="return notMadeYet();"> </a>
-	<a class="pink" href="#" onclick="return catalogVirtual();">Virtual Wumpus</a>
+	<a class="pink" href="#" onclick="return notMadeYet();">Virtual Wumpus</a>
 	<a class="purple" href="#" onclick="return notMadeYet();">Wump Channels</a>
-	<a class="blue" href="#" onclick="return cacheMoney();">Add Wump Points</a>
+	<a class="blue" href="#" onclick="return sickHax();">Add Wump Points</a>
 	<a class="orange" href="#" onclick="return optionDisplay();">Wump Settings</a>
 	<a class="green" href="https://clubwumpusteam.github.io/web">Exit to Site</a>
 	</div>
 	<div class="bar">
-		<a class="black" href="#" onclick="return newsDisplay();"><marquee scrollamount=10>Welcome to the Wump Shop Channel!</marquee></a>
+		<a class="black" href="#" onclick="return newsDisplay();">Welcome to the Wump Shop Channel!</a>
 		</div>
 		<p class="infotext">© 20XX Wumpus Entertainment Studios.  No Rights Reserved.</p>
 <audio
@@ -136,11 +125,11 @@ var snd = new Audio("bgm/select.mp3");
 </div>
 
 <script>
-var timer;
+var myVar;
 
-function setClocks() {
+function myFunction() {
 	document.getElementById('loading').play()
-    timer = setTimeout(showPage, 3000);
+    myVar = setTimeout(showPage, 3000);
 }
 
 function showPage() {
@@ -149,7 +138,6 @@ function showPage() {
   document.getElementById("mainstuff").style.display = "block";
 document.getElementById('bgm').play()
 }
-
 </script>
 
 </body>

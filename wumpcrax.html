@@ -1,0 +1,100 @@
+<html> 
+  <head> 
+  	<link rel="icon" href="./favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <meta name="description" content="THE LATEST IN HOT WUMP WAREZ: WUMPCRAX™ ! ! !">
+    <meta name="author" content="WUMPCRAX">
+    <meta property="og:title" name="Title" content="WUMPCRAX™"/>
+    <meta property="og:description" name="Description"
+          content="THE LATEST IN HOT WUMP WAREZ: WUMPCRAX™ ! ! !"/>
+    <meta property="og:image" name="Image" content="i.imgur.com/XR8xprg.png"/>
+	<title>WUMPCRAX™</title>
+    
+    <script src="./codef/core.js"></script> 
+    <script src="./codef/scrolltext.js"></script> 
+    <script src="./codef/star.js"></script> 
+    <script src="./codef/fx.js"></script> 
+    <script src="./codef/3d.js"></script> 
+	<link rel="stylesheet" href="./wumpcrax.css"></script>
+    <script> 
+      
+	  var myimage = new image('img/wumpPhased.png');
+      var myfont = new image('img/crax-font.png');
+      var mycanvas;
+      var myscrolltext;
+      var mystarfield;
+      var myoffscreencanvas;
+      var myfx;
+      var myfxparam=[
+        {value: 0, amp: 32.5, inc:0.02, offset: -0.05},
+      ];
+      
+      var myscrollparam=[
+        {myvalue: 0, amp: 65, inc:0.2, offset: -0.04},
+      ];
+
+      var my3d;
+      
+      var myobj = new Array();
+      var myobjvert = new Array();
+      myobjvert=[
+        {x:-1, y:1, z:-1},
+        {x: 1, y:1, z:-1},
+        {x: 1, y:1, z: 1},
+        {x:-1, y:1, z: 1},
+        {x:-1, y:-1, z:-1},
+        {x: 1, y:-1, z:-1},
+        {x: 1, y:-1, z: 1},
+        {x:-1, y:-1, z: 1},
+      ];
+        myobj=[ 
+        {p1:0, p2:1},
+		{p1:0, p2:3},
+		{p1:0, p2:4},
+        {p1:2, p2:1},
+		{p1:2, p2:3},
+		{p1:2, p2:6},
+        {p1:4, p2:5},
+		{p1:4, p2:7},
+		{p1:5, p2:1},
+		{p1:5, p2:6},
+		{p1:7, p2:6},
+		{p1:7, p2:3},
+      ];    
+        
+        
+		
+        function init(){
+        myoffscreencanvas=new canvas(280,164);
+        myimage.draw(myoffscreencanvas,50,0);
+        mycanvas=new canvas(640,480,"main");
+        mystarfield=new starfield3D(mycanvas, 500, 2, 640,480, 320, 240,'#FFFFFF', 16,0,0);
+        my3d=new codef3D(mycanvas, 20, 10, 1, 50 );
+        my3d.lines(myobjvert, myobj, new LineBasicMaterial({ color: 0x7289DA, linewidth:3}));
+        myfont.initTile(32,32,32);
+        myscrolltext = new scrolltext_horizontal();
+        myscrolltext.scrtxt="HELLO FOLKS!!!  WELCOME TO THE LATEST RELEASE FROM EIGHTKILO:        WUMPCRAX       ^P9THIS IS THE LATEST IN WUMPUS WAREZ!!!   YOU MIGHT HAVE SEEN THE POPUP THAT LET YOU KNOW YOU HAVE LOTSA MONIES.  IF YOU DIDN'T,  TRY CLICKING THE ADD WUMP POINTS BUTTON AGAIN ! ! !    GREETZ:        DISCORD STAFF,   JARED,   CHEESECAST,   CODEF TEAM,   T-PORT,   AND ALL THE LOVELY PEOPLE AT WUMPUS ENTERTAINMENT STUDIOS!!!   HAVE A NICE DAY!!!          - - - - - - - - -                   ";
+        myscrolltext.init(mycanvas,myfont,3,myscrollparam);
+        myfx=new FX(myoffscreencanvas,mycanvas,myfxparam);
+        
+        go();
+        }
+        
+        function go(){
+        mycanvas.fill('#000000');
+        mystarfield.draw();
+		myfx.siny(180,180);
+        my3d.group.rotation.x+=0.01;
+        my3d.group.rotation.y+=0.02;
+        my3d.group.rotation.z+=0.04;
+        my3d.draw();
+        myscrolltext.draw(240-16);
+        requestAnimFrame( go );
+        }
+        
+    </script> 
+  </head> 
+  <body onLoad="init();">
+    <center><div id="main"></div><br><br></center>
+  </body> 
+</html>

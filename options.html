@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+	<link rel="icon" href="./favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <meta name="description" content="The Wump Shop Channel: Stocking the best Wumpus memes since 2016.">
+    <meta name="author" content="Wump Shop Channel">
+    <meta property="og:title" name="Title" content="Wump Shop Channel"/>
+    <meta property="og:description" name="Description"
+          content="The Wump Shop Channel: Stocking the best Wumpus memes since 2016."/>
+    <meta property="og:image" name="Image" content="https://i.imgur.com/QtflJti.png"/>
+    <meta property="og:url" name="URL" content="https://clubwumpusteam.github.io/wumpshop/"/>
+	<title>Wump Shop Channel</title>
+
+	<link type="text/css" href="options.css" rel="stylesheet" />
+	
+	<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="alertify/alertify.js"></script>
+	<link rel="stylesheet" href="alertify/css/alertify.css">
+	<link rel="stylesheet" href="alertify/css/themes/default.css">
+	
+	<script type="text/javascript">
+		$(document).ready(function() {		
+			$('.menu a').hover(function() {			    
+				$(this).stop().animate({							
+					opacity: 1
+				}, 90);		
+				}, function() {			
+				$(this).stop().animate({							
+					opacity: 0.3
+				}, 300);		
+			});	
+		});	
+		
+		function wtfisthis() {
+		alertify.alert("Welcome to the Wump Shop Channel!  This place will be mainly used as a hub for various Wumpus-related assets for use in memes. <br><br> Now, I know what you're thinking, ''OMG IM GONNA HAV 2 PAY 4 MEME CUZ IT HAS SHOP IN TITLE OMFG SELLOUT'', and don't worry.  We hate microtransactions as much as you do, so they're not in this.  Instead, everything is, and always will be 100% free here.");
+		}
+		
+		function goodTime() {
+		alertify.YoutubeDialog || alertify.dialog('YoutubeDialog',function(){
+    var iframe;
+    return {
+        // dialog constructor function, this will be called when the user calls alertify.YoutubeDialog(videoId)
+        main:function(videoId){
+            //set the videoId setting and return current instance for chaining.
+            return this.set({ 
+                'videoId': videoId
+            });
+        },
+        // we only want to override two options (padding and overflow).
+        setup:function(){
+            return {
+                options:{
+                    //disable both padding and overflow control.
+                    padding : !1,
+                    overflow: !1,
+                }
+            };
+        },
+        // This will be called once the DOM is ready and will never be invoked again.
+        // Here we create the iframe to embed the video.
+        build:function(){           
+            // create the iframe element
+            iframe = document.createElement('iframe');
+            iframe.frameBorder = "no";
+            iframe.width = "100%";
+            iframe.height = "100%";
+            // add it to the dialog
+            this.elements.content.appendChild(iframe);
+
+            //give the dialog initial height (half the screen height).
+            this.elements.body.style.minHeight = screen.height * .4 + 'px';
+        },
+        // dialog custom settings
+        settings:{
+            videoId:undefined
+        },
+        // listen and respond to changes in dialog settings.
+        settingUpdated:function(key, oldValue, newValue){
+            switch(key){
+               case 'videoId':
+                    iframe.src = "https://www.youtube.com/embed/" + newValue + "?enablejsapi=1&t=36";
+                break;   
+            }
+        },
+        // listen to internal dialog events.
+        hooks:{
+            // triggered when the dialog is closed, this is seperate from user defined onclose
+            onclose: function(){
+                iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}','*');
+            },
+            // triggered when a dialog option gets update.
+            // warning! this will not be triggered for settings updates.
+            onupdate: function(option,oldValue, newValue){
+                switch(option){
+                    case 'resizable':
+                        if(newValue){
+                            this.elements.content.removeAttribute('style');
+                            iframe && iframe.removeAttribute('style');
+                        }else{
+                            this.elements.content.style.minHeight = 'inherit';
+                            iframe && (iframe.style.minHeight = 'inherit');
+                        }
+                    break;    
+                }    
+            }
+        }
+    };
+});
+//show the dialog
+alertify.YoutubeDialog('HgzGwKwLmgM').set({frameless:true});
+		}
+				function info() {
+    var date = new Date(),
+        output = document.getElementById( 'output' ),
+        dateString = (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear().toString().substr(2,2);
+		alertify.alert("Current Version: Public Test Beta<br /><br />Creation Date: 12/2/16 <br />Most Recent Update: 12/21/16 <br />Current Date: " + dateString );
+		};
+		function promptName() {
+alertify.prompt( 'Wump Shop Channel', 'Please enter a username.', 'Anonymous'
+               , function(evt, value) { alertify.success('Username set to ' + value) }
+               , function() { null });
+    }
+	</script>
+</head>
+
+<body>
+
+<div style="text-align:center;margin-top:20px;">
+
+<div class="menu">
+	<a class="pink" href="#" onclick="return promptName();">Change User Settings</a>
+	<a class="orange" href="#" onclick="return wtfisthis();">What is this?</a>
+	<a class="yellow" href="#" onclick="return info();" >View Information</a>
+	<a class="green" href="#" onclick="return goodTime();">Have a Good Time</a>
+	</div>
+		<p class="infotext">© 20XX Wumpus Entertainment Studios.  No Rights Reserved.</p>
+</body>
+</html>
+
